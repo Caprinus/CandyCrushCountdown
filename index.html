@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <!-- Quiero ver cuantos niveles me faltan para terminar Candy Crush -->
-  
+
+
+
 <head>
     
     <meta charset="utf-8">
@@ -10,14 +12,89 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
   
-</head>
-<body>
-  <div class="row">
+<!--<div
+  class="bg-image"
+  style="
+    background-image: url('https://images.alphacoders.com/900/900894.jpg');
+    height: 100vh;
+  "
+></div> -->
     
+    <style>
+     
+      p {text-align: center;}
+      
+    </style>
+      <!-- h1 {text-align: center;}-->
+      <!-- div {text-align: center;}-->
+
+
+</head>
+
+  
+<body style="background-image: url('https://images.alphacoders.com/900/900894.jpg');">
   
   
+  <div class="row"> 
+    <div class="col-4"> </div>
+    <div class="col-8">
+      <img src="Imagenes/candy-crush-soda-saga.png" alt="CandyCrushSaga" width="400" height="400">
+    </div>
   </div>
 
+  <div class="row"> 
+    <div class="col-3"> </div>
+    <div class="col-8">
+      <img src="Imagenes/Countdown.png" alt="Countdown" width="600" height="100">
+    </div>
+  </div>
+  
+  <div class="row"> 
+    <div class="col-4"> </div>
+    <div class="col-4" > 
+      <p><form style="background-color:white;" onsubmit="return false">
+            <label> Actualmente existen 9485 niveles en CandyCrushSaga.</label><br>
+            <label> Semanalmente se agregan 45 niveles en promedio.</label><br>
+            <label> ¿En que nivel vas? :</label><br>
+            <input type="text" id="etapa" name="etapa"><br>
+            <label> ¿Cuantos niveles completas a la semana? :</label><br>
+            <input type="text" id="semanal" name="semanal"><br><br>
+            <button onclick="Calcular()">¡Calcular!</button><br><br>
+            <!--input type="submit" value="¡Calcular!" onclick="Calcular()"-->
+            <p id="Resultado"></p>
+          </form>
+      </p>  
+    </div>
+  </div>
+  
+  <script>
+    var x = document.getElementById("Resultado");
+
+    function Calcular() {
+      
+      var et = document.getElementById("etapa").value;
+      var sem = document.getElementById("semanal").value;
+      var lpw = 45;
+      var total = 9485;
+      var diff = total - parseInt(et);
+
+      var res = parseInt(diff / (parseInt(sem) - lpw));
+      var resmes=(res/4);
+      var resannio= resmes/12;
+
+      if ((sem-lpw)>0){
+      x.innerHTML = " Terminarás Candy Crush en "+ res + " semanas aprox,"+
+                "<br> lo que corresponde a "+ resmes +" meses, o "+
+                "<br> "+ resannio +" años.";
+      }
+      else{ x.innerHTML = " Necesitas hacer más niveles a la semana :( "; }
+
+
+    }
+
+
+
+  </script>
   
   
   
