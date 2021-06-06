@@ -22,51 +22,58 @@
     
     <style>
      
-      p {text-align: center;}
-      
+      .roundstyle {
+        background-color: pink; /* Changing background color */
+        font-weight: bold; /* Making font bold */
+        border-radius: 20px; /* Making border radius */
+        width: auto; /* Making auto-sizable width */
+        height: auto; /* Making auto-sizable height */
+        padding: 5px 30px 5px 30px; /* Making space around letters */
+        font-size: 16px; /* Changing font size */
+}
     </style>
-      <!-- h1 {text-align: center;}-->
-      <!-- div {text-align: center;}-->
 
+    <title>Candy Crush Countdown</title>
 
 </head>
 
   
 <body style="background-image: url('https://images.alphacoders.com/900/900894.jpg');">
   
+  <div class="container">
   
-  <div class="row"> 
-    <div class="col-4"> </div>
-    <div class="col-8">
+  <div class="row justify-content-center"> 
+    <div class="col-sm-12 col-md-8 col-lg-4">
       <img src="Imagenes/candy-crush-soda-saga.png" alt="CandyCrushSaga" width="400" height="400">
     </div>
   </div>
 
-  <div class="row"> 
-    <div class="col-3"> </div>
-    <div class="col-8">
+  <div class="row justify-content-center"> 
+        <div class="col-sm-10 col-md-8 col-lg-6">
       <img src="Imagenes/Countdown.png" alt="Countdown" width="600" height="100">
     </div>
   </div>
   
-  <div class="row"> 
-    <div class="col-4"> </div>
-    <div class="col-4" > 
-      <p><form style="background-color:white;" onsubmit="return false">
-            <label> Actualmente existen 9485 niveles en CandyCrushSaga.</label><br>
-            <label> Semanalmente se agregan 45 niveles en promedio.</label><br>
-            <label> ¿En que nivel vas? :</label><br>
+  <div class="row justify-content-center"> 
+    <div class="col-sm-10 col-md-8 col-lg-6" >
+     <div class="roundstyle"> 
+      <form class="text-center" style="background-color:pink;" onsubmit="return false">
+            <label class="h6"> Actualmente existen 9485 niveles en CandyCrushSaga.</label><br>
+            <label class="h6"> Semanalmente se agregan 45 niveles en promedio.</label><br>
+            <label class="h6"> ¿En que nivel vas? :</label><br>
             <input type="text" id="etapa" name="etapa"><br>
-            <label> ¿Cuantos niveles completas a la semana? :</label><br>
+            <label class="h6"> ¿Cuantos niveles completas a la semana? :</label><br>
             <input type="text" id="semanal" name="semanal"><br><br>
             <button onclick="Calcular()">¡Calcular!</button><br><br>
-            <!--input type="submit" value="¡Calcular!" onclick="Calcular()"-->
             <p id="Resultado"></p>
-          </form>
-      </p>  
+       </form> 
+      </div> 
     </div>
   </div>
   
+  </div>
+
+
   <script>
     var x = document.getElementById("Resultado");
 
