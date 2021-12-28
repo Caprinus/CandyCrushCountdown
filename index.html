@@ -3,7 +3,6 @@
 <!-- Quiero ver cuantos niveles me faltan para terminar Candy Crush -->
 
 
-
 <head>
     
     <meta charset="utf-8">
@@ -77,6 +76,22 @@
   <script>
     var x = document.getElementById("Resultado");
 
+    const jsdom = require("jsdom");
+    const { JSDOM } = jsdom;
+
+    (async () => {
+      const response = await fetch('https://candycrush.fandom.com/wiki/Special:RecentChanges');
+      const text = await response.text();
+      const dom = await new JSDOM(text);
+      console.log(dom.window.document.querySelector("h1").textContent);
+    })()
+    /*
+    (async () => {
+      const response = await fetch('https://candycrush.fandom.com/wiki/Special:RecentChanges');
+      const text = await response.text();
+      console.log(text.match(/(?<=\<h1>).*(?=\<\/h1>)/));
+    })()
+    */
     function Calcular() {
       
       var et = document.getElementById("etapa").value;
