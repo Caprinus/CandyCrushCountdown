@@ -82,14 +82,14 @@
 
     (async () => {
 
-	const response = await fetch(`https://cors-anywhere.herokuapp.com/${"https://candycrush.fandom.com/wiki/List_of_Levels"}`)
+	/*const response = await fetch(`https://cors-anywhere.herokuapp.com/${"https://candycrush.fandom.com/wiki/List_of_Levels"}`)
 	.then(response => response.text())
 	.then(html => {
   	const parser = new DOMParser()
   	const dom = parser.parseFromString(htmlContent, 'text/html')
   	// now you can select elements like for normal node
   	dom.querySelector('div')
-})
+})*/
 
 	    
       /*const response = await fetch('https://candycrush.fandom.com/wiki/List_of_Levels', {
@@ -99,7 +99,7 @@
         	}
     	});
       */
-      //const response = await fetch('https://candycrush.fandom.com/wiki/List_of_Levels', { mode: 'no-cors'});
+      const response = await fetch('https://candycrush.fandom.com/wiki/List_of_Levels', { mode: 'no-cors'});
         
       //const response = await fetch('https://candycrush.fandom.com/wiki/Special:RecentChanges');
       const text = await response.text();
