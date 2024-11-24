@@ -74,17 +74,19 @@
 
 
   <script>
+    
     var x = document.getElementById("Resultado");
 
-    const jsdom = require("jsdom");
-    const { JSDOM } = jsdom;
+    //const jsdom = require("jsdom");
+    //const { JSDOM } = jsdom;
 
     (async () => {
       const response = await fetch('https://candycrush.fandom.com/wiki/List_of_Levels');
       //const response = await fetch('https://candycrush.fandom.com/wiki/Special:RecentChanges');
       const text = await response.text();
-      const dom = await new JSDOM(text);
-      console.log(dom.window.document.querySelector("h1").textContent);
+      //const dom = await new JSDOM(text);
+      //console.log(dom.window.document.querySelector("h1").textContent);
+      console.log(response);
     })()
     /*
     (async () => {
